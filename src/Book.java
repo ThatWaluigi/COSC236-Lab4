@@ -22,7 +22,10 @@ public class Book {
 		public String getAuthor() {
 			return author;
 		}
-		//method to see if It's available
+		//method to set availability
+		public void setIsAvailable(boolean isAvailable) {
+			this.isAvailable = isAvailable;
+		}
 		public boolean isAvailable() {
 			return true;
 		}
@@ -33,6 +36,13 @@ public class Book {
 				
 			}
 		}
+		public void returnBook() {
+			isAvailable = true;
+			
+		}
+			
+		
+		}
 	
 	
-}
+
