@@ -92,5 +92,6 @@ public class Library {
 				return member;
 			}
 		}
+		return null;
 	}
 }
