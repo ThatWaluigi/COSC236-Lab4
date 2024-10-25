@@ -3,7 +3,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
 public class LibraryApp {
 
  private ArrayList<String> availableBooks = new ArrayList<>();
@@ -74,10 +73,8 @@ public void showMembers() {
 }
   
 public static void main(String[] args) {
-	
-	 LibraryApp library = new LibraryApp();
-
-	 System.out.println(" *** Library management system demo *** ");
+     LibraryApp library = new LibraryApp();
+     System.out.println(" *** Library management system demo *** ");
 	 
     // Adding some books to the catalog
 	System.out.println("\n *** Adding \"Dune\" to the library:");
