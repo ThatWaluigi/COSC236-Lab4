@@ -6,14 +6,12 @@ public class Member {
 	// Can borrow and return books.
 
 	private String name;
-	private int memberId;
 	private ArrayList<Book> borrowedBooks;
 	// private borrowedbBooks DONE: implement collection of borrowed books
 	
 	// DONE: implement functionality of Member class
-	public Member(String name, int memberId) {
+	public Member(String name) {
 		this.name = name;
-		this.memberId = memberId;
 	}
 	public void borrowBook(Book book) {
 		if(book.isAvailable()) {
@@ -35,8 +33,5 @@ public class Member {
 	}
 	public String getName() {
 		return this.name;
-	}
-	public int getMemberId() {
-		return this.memberId;
 	}
 }
