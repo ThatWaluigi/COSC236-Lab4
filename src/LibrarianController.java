@@ -15,5 +15,11 @@ public class LibrarianController {
 		this.books = new ArrayList<>();
 	}
 	
-	public void BorrowBook()
+	public void BorrowBook(String name,  Book book) { 
+		Member member = new Member(name);
+		if(book.isAvailable()) { 
+			member.borrowBook(book);
+		}
+		
+	}
 }
