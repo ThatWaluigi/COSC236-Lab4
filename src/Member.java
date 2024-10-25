@@ -33,4 +33,7 @@ public class Member {
 			return null;
 		}
 	}
+	public String getName() {
+		return this.name;
+	}
 }
