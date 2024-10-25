@@ -15,11 +15,11 @@ public class Book {
 	
 	
 		//method so we get the title
-		public String getTitle() {
+		public String title() {
 			return title;
 		}
 		//method to get the author
-		public String getAuthor() {
+		public String author() {
 			return author;
 		}
 		//method to set availability
