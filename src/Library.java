@@ -63,6 +63,7 @@ public class Library {
 	public void returnBook(Member member, Book book){
 		if (borrowedBooks.contains(book)){
 			member.returnBook(book);
+			borrowedBooks.remove(book);
 			System.out.println(member.getName() + " has returned the book '" + book.getTitle() + "'");
 		}
 	}
@@ -71,7 +72,7 @@ public class Library {
 		System.out.println("Available Books: ");
 		for (Book book : catalog){
 			if (!borrowedBooks.contains(book)){
-				System.out.println("	" + book.getTitle());
+				System.out.println("-	" + book);
 			}
 		}
 	}
@@ -79,7 +80,7 @@ public class Library {
 	public void getAllMembers(){
 		System.out.println("Current Library Members: ");
 		for (Member member : members){
-			System.out.println("	" + member);
+			System.out.println("-	" + member);
 		}
 	}
 }
