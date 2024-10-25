@@ -29,6 +29,12 @@ public class Library {
 		}
 	}
 
+	public void addMember(String name, int id){
+		Member member = new Member(name, id);
+		members.add(member);
+		System.out.println(member.getName() + " has joined the library");
+	}
+
 	public void removeMember(Member member){
 		members.remove(member);
 		System.out.println(member.getName() + " has left the library");

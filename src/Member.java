@@ -18,6 +18,7 @@ public class Member {
 	public void borrowBook(Book book) {
 		if(book.isAvailable()) {
 			borrowedBooks.add(book);
+			book.setIsAvailable(false);
 		}else {
 			System.out.println("Book is not available!");
 		}
@@ -25,6 +26,7 @@ public class Member {
 	public Book returnBook(Book book) {
 		if(borrowedBooks.contains(book)) {
 			borrowedBooks.remove(book);
+			book.setIsAvailable(true);
 			return book;
 		}else {
 			System.out.println("Book is not borrowed by this person!");

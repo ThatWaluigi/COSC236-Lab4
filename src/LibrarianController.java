@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class LibrarianController {
 
 	// GRASP Principle: Controller
@@ -5,5 +7,13 @@ public class LibrarianController {
 	// Delegates tasks to the appropriate objects.
 	
 	// TODO: implement functionality of Member class
-
+	private Member member; 
+	private ArrayList<Book> books;
+	
+	public LibrarianController() { 
+		this.member = member;
+		this.books = new ArrayList<>();
+	}
+	
+	public void BorrowBook()
 }
