@@ -36,4 +36,7 @@ public class Member {
 	public String getName() {
 		return this.name;
 	}
+	public int getMemberId() {
+		return this.memberId;
+	}
 }
