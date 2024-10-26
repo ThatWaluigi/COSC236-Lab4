@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Library {
 	
@@ -12,6 +13,7 @@ public class Library {
 	// private members (list of Members)
 
 	// TODO: implement functionality of Member class
+
 	private ArrayList<Book> catalog = new ArrayList<>();
 	private ArrayList<Book> borrowedBooks = new ArrayList<>();
 	private ArrayList<Member> members = new ArrayList<>();
@@ -29,8 +31,8 @@ public class Library {
 		}
 	}
 
-	public void addMember(String name, int id){
-		Member member = new Member(name, id);
+	public void addMember(String name){
+		Member member = new Member(name);
 		members.add(member);
 		System.out.println(member.getName() + " has joined the library");
 	}
@@ -63,6 +65,7 @@ public class Library {
 	public void returnBook(Member member, Book book){
 		if (borrowedBooks.contains(book)){
 			member.returnBook(book);
+			borrowedBooks.remove(book);
 			System.out.println(member.getName() + " has returned the book '" + book.getTitle() + "'");
 		}
 	}
@@ -71,7 +74,7 @@ public class Library {
 		System.out.println("Available Books: ");
 		for (Book book : catalog){
 			if (!borrowedBooks.contains(book)){
-				System.out.println("	" + book.getTitle());
+				System.out.println("-	" + book);
 			}
 		}
 	}
@@ -79,7 +82,16 @@ public class Library {
 	public void getAllMembers(){
 		System.out.println("Current Library Members: ");
 		for (Member member : members){
-			System.out.println("	" + member);
+			System.out.println("-	" + member);
 		}
+	}
+
+	public Member getMemberByName(String name){
+		for (Member member : members){
+			if (member.getName().equals(name)){
+				return member;
+			}
+		}
+		return null;
 	}
 }
