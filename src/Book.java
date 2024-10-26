@@ -15,11 +15,11 @@ public class Book {
 	
 	
 		//method so we get the title
-		public String title() {
+		public String getTitle() {
 			return title;
 		}
 		//method to get the author
-		public String author() {
+		public String getAuthor() {
 			return author;
 		}
 		//method to set availability
@@ -39,6 +39,15 @@ public class Book {
 		public void returnBook() {
 			isAvailable = true;
 			
+		}
+		
+		public void  setDetails(String author, String title) {
+			this.author = author;
+			this.title = title;
+		}
+		
+		public void displayDetails() {
+			System.out.println("Title: " + title + ", " + "Author: " + author);
 		}
 			
 		
