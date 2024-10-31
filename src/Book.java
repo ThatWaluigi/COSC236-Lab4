@@ -27,7 +27,7 @@ public class Book {
 			this.isAvailable = isAvailable;
 		}
 		public boolean isAvailable() {
-			return true;
+			return this.isAvailable;
 		}
 		
 		public void borrow() {
