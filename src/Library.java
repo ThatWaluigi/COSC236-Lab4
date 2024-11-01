@@ -15,12 +15,10 @@ public class Library {
 	// TODO: implement functionality of Member class
 
 	private ArrayList<Book> catalog = new ArrayList<>();
-	private ArrayList<Book> borrowedBooks = new ArrayList<>();
 	private ArrayList<Member> members = new ArrayList<>();
 
 	public Library(){
 		catalog = new ArrayList<>();
-		borrowedBooks = new ArrayList<>();
 		members = new ArrayList<>();
 	}
 
@@ -82,9 +80,9 @@ public class Library {
 	}
 
 	public void borrowBook(Member member, Book book){
-		if (!borrowedBooks.contains(book)){
+		if (book.isAvailable()){
 			member.borrowBook(book);
-			borrowedBooks.add(book);
+			book.setIsAvailable(false);
 			System.out.println(member.getName() + " has borrowed the book '" + book.getTitle() + "'");
 		}
 		else
@@ -96,9 +94,9 @@ public class Library {
 	public void borrowBook(String memberName, String bookTitle){
 		Book book = getBookByTitle(bookTitle);
 		Member member = getMemberByName(memberName);
-		if (!borrowedBooks.contains(book)){
+		if (book.isAvailable()){
 			member.borrowBook(book);
-			borrowedBooks.add(book);
+			book.setIsAvailable(false);
 			System.out.println(member.getName() + " has borrowed the book '" + book.getTitle() + "'");
 		}
 		else
@@ -108,9 +106,9 @@ public class Library {
 	}
 
 	public void returnBook(Member member, Book book){
-		if (borrowedBooks.contains(book)){
+		if (!book.isAvailable()){
 			member.returnBook(book);
-			borrowedBooks.remove(book);
+			book.setIsAvailable(true);
 			System.out.println(member.getName() + " has returned the book '" + book.getTitle() + "'");
 		}
 	}
@@ -118,9 +116,9 @@ public class Library {
 	public void returnBook(String memberName, String bookTitle){
 		Book book = getBookByTitle(bookTitle);
 		Member member = getMemberByName(memberName);
-		if (borrowedBooks.contains(book)){
+		if (!book.isAvailable()){
 			member.returnBook(book);
-			borrowedBooks.remove(book);
+			book.setIsAvailable(true);
 			System.out.println(member.getName() + " has returned the book '" + book.getTitle() + "'");
 		}
 	}
@@ -128,7 +126,7 @@ public class Library {
 	public void getAvailableBooks(){
 		System.out.println("Available Books: ");
 		for (Book book : catalog){
-			if (!borrowedBooks.contains(book)){
+			if (book.isAvailable()){
 				System.out.println("-	" + book);
 			}
 		}
