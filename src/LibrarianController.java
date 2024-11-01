@@ -14,15 +14,11 @@ public class LibrarianController {
 	}
 	
 	public void borrowBook(String memberName,  String title) { 
-		Member member = library.getMemberByName(memberName);
-		Book book = library.getBookByName(title);
-		library.borrowBook(member, book);
+		library.borrowBook(memberName, title);
 	}
 	
 	public void returnBook(String memberName, String title) { 
-		Member member = library.getMemberByName(memberName);
-		Book book = library.getBookByName(title);
-		library.returnBook(member, book);
+		library.returnBook(memberName, title);
 	}
 	
 	public void addMember(String name) { 
@@ -30,17 +26,14 @@ public class LibrarianController {
 	}
 	
 	public void removeMember(String name) { 
-		Member member = library.getMemberByName(name);
-		library.removeMember(member);
+		library.removeMember(name);
 	}
 	
 	public void addBook(String title, String author) { 
-		Book book = new Book(title, author);
-		library.addBook(book);
+		library.addBook(title, author);
 	}
 	
 	public void removeBook(String title) { 
-		Book book = library.getBookByName(title);
-		library.removeBook(book);
+		library.removeBook(title);
 	}
 }
