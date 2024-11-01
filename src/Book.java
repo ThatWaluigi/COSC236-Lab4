@@ -27,7 +27,7 @@ public class Book {
 			this.isAvailable = isAvailable;
 		}
 		public boolean isAvailable() {
-			return true;
+			return this.isAvailable;
 		}
 		
 		public void borrow() {
@@ -39,6 +39,15 @@ public class Book {
 		public void returnBook() {
 			isAvailable = true;
 			
+		}
+		
+		public void  setDetails(String author, String title) {
+			this.author = author;
+			this.title = title;
+		}
+		
+		public void displayDetails() {
+			System.out.println("Title: " + title + ", " + "Author: " + author);
 		}
 			
 		
