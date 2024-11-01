@@ -36,4 +36,12 @@ public class LibrarianController {
 	public void removeBook(String title) { 
 		library.removeBook(title);
 	}
+	
+	public void getAvailableBooks() { 
+		library.getAvailableBooks();
+	}
+	
+	public void getAllMembers() { 
+		library.getAllMembers();
+	}
 }
