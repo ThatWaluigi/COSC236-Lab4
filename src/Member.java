@@ -12,7 +12,9 @@ public class Member {
 	// DONE: implement functionality of Member class
 	public Member(String name) {
 		this.name = name;
+		this.borrowedBooks = new ArrayList<>();
 	}
+
 	public void borrowBook(Book book) {
 		if(book.isAvailable()) {
 			borrowedBooks.add(book);
