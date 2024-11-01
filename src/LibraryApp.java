@@ -42,6 +42,8 @@ public static void main(String[] args) {
     //System.out.println("\n *** Bob borrows 1984:");
     controller.borrowBook("Bob", "1984");
     
+    controller.getBorrowedBooks();
+    
     // Show available books after borrowing
     controller.getAvailableBooks();
     
@@ -63,6 +65,12 @@ public static void main(String[] args) {
     
     // Show available books after borrowing
     controller.getAvailableBooks();
+    
+    System.out.println(controller.getMemberByName("Alice"));
+    
+    System.out.println(controller.getBookByTitle("Dune"));
+    
+    controller.getBorrowedBooks();
 
 	}
 }

@@ -45,11 +45,18 @@ public class LibrarianController {
 		library.getAllMembers();
 	}
 	
-	public void getBookByTitle(String title) { 
-		library.getBookByTitle(title);
+	public Book getBookByTitle(String title) { 
+		return library.getBookByTitle(title);
+		
 	}
 	
-	public void getMemberByName(String name) { 
-		library.getMemberByName(name);
+	public Member getMemberByName(String name) { 
+		return library.getMemberByName(name);
 	}
+	
+	public void getBorrowedBooks() { 
+		library.getBorrowedBooks();;
+	}
+	
+	
 }
