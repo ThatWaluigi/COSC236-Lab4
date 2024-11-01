@@ -49,6 +49,12 @@ public class Library {
 		}
 	}
 
+	public void addBook(String bookName, String author){
+		Book book = new Book(bookName, author);
+		catalog.add(book);
+		System.out.println(book.getTitle() + " has been added to the catalog.");
+	}
+
 	public void removeBook(Book book){
 		catalog.remove(book);
 		System.out.println(book.getTitle() + " has been removed from the catalog.");
