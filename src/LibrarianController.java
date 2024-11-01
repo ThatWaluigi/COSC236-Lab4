@@ -7,19 +7,21 @@ public class LibrarianController {
 	// Delegates tasks to the appropriate objects.
 	
 	// TODO: implement functionality of Member class
-	private Member member; 
-	private ArrayList<Book> books;
+	private Library library;
 	
 	public LibrarianController() { 
-		this.member = member;
-		this.books = new ArrayList<>();
+		this.library = new Library();
 	}
 	
-	public void BorrowBook(String name,  Book book) { 
-		Member member = new Member(name);
-		if(book.isAvailable()) { 
-			member.borrowBook(book);
-		}
-		
+	public void borrowBook(String memberName,  String bookName) { 
+		Member member = library.getMemberByName(memberName);
+		Book book = library.getBookByName(bookName);
+		library.borrowBook(member, book);
+	}
+	
+	public void returnBook(String memberName, String bookName) { 
+		Member member = library.getMemberByName(memberName);
+		Book book = library.getBookByName(bookName);
+		library.returnBook(member, book);
 	}
 }
