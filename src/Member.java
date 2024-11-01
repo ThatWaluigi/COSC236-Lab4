@@ -23,14 +23,13 @@ public class Member {
 			System.out.println("Book is not available!");
 		}
 	}
-	public Book returnBook(Book book) {
+	public void returnBook(Book book) {
 		if(borrowedBooks.contains(book)) {
 			borrowedBooks.remove(book);
 			book.setIsAvailable(true);
-			return book;
-		}else {
+		}
+		else {
 			System.out.println("Book is not borrowed by this person!");
-			return null;
 		}
 	}
 	public String getName() {
