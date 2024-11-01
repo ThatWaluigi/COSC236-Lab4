@@ -132,7 +132,7 @@ public class Library {
 		}
 	}
 
-	public void getBorrowBooks(){
+	public void getBorrowedBooks(){
 		System.out.println("Borrowed Books: ");
 		for (Book book : catalog){
 			if (!book.isAvailable()){
