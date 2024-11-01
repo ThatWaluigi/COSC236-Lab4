@@ -36,6 +36,10 @@ public class Member {
 		return this.name;
 	}
 
+	public boolean hasBorrowedBook(Book book){
+		return borrowedBooks.contains(book);
+	}
+
 	@Override
 	public String toString() {
 		return "Member: " + getName();

@@ -132,6 +132,22 @@ public class Library {
 		}
 	}
 
+	public void getBorrowBooks(){
+		System.out.println("Borrowed Books: ");
+		for (Book book : catalog){
+			if (!book.isAvailable()){
+				Member member = null;
+				for (Member mem : members){
+					if (mem.hasBorrowedBook(book)){
+						member = mem;
+						break;
+					}
+				}
+				System.out.println("-	" + book + " borrowed by " + member);
+			}
+		}
+	}
+
 	public void getAllMembers(){
 		System.out.println("Current Library Members: ");
 		for (Member member : members){
