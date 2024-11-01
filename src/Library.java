@@ -87,6 +87,10 @@ public class Library {
 			borrowedBooks.add(book);
 			System.out.println(member.getName() + " has borrowed the book '" + book.getTitle() + "'");
 		}
+		else
+		{
+			System.out.println(book.getTitle() + " has already been borrowed.");
+		}
 	}
 
 	public void borrowBook(String memberName, String bookTitle){
@@ -96,6 +100,10 @@ public class Library {
 			member.borrowBook(book);
 			borrowedBooks.add(book);
 			System.out.println(member.getName() + " has borrowed the book '" + book.getTitle() + "'");
+		}
+		else
+		{
+			System.out.println(book.getTitle() + " has already been borrowed.");
 		}
 	}
 
