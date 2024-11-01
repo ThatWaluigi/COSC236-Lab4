@@ -49,9 +49,12 @@ public class Book {
 		public void displayDetails() {
 			System.out.println("Title: " + title + ", " + "Author: " + author);
 		}
-			
-		
-		}
+
+	@Override
+	public String toString() {
+		return "Book: " + getTitle() + " by " + getAuthor();
+	}
+}
 	
 	
 
