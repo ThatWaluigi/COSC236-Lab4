@@ -95,6 +95,16 @@ public class Library {
 		}
 	}
 
+	public void returnBook(String memberName, String bookTitle){
+		Book book = getBookByTitle(bookTitle);
+		Member member = getMemberByName(memberName);
+		if (borrowedBooks.contains(book)){
+			member.returnBook(book);
+			borrowedBooks.remove(book);
+			System.out.println(member.getName() + " has returned the book '" + book.getTitle() + "'");
+		}
+	}
+
 	public void getAvailableBooks(){
 		System.out.println("Available Books: ");
 		for (Book book : catalog){
