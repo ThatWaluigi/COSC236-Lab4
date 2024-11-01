@@ -49,12 +49,37 @@ public class Library {
 		}
 	}
 
+	public void addBook(String bookName, String author){
+		Book book = new Book(bookName, author);
+		catalog.add(book);
+		System.out.println(book.getTitle() + " has been added to the catalog.");
+	}
+
 	public void removeBook(Book book){
 		catalog.remove(book);
 		System.out.println(book.getTitle() + " has been removed from the catalog.");
 	}
 
+	public Book getBookByTitle(String title){
+		for (Book book : catalog){
+			if (book.getTitle().equals(title)){
+				return book;
+			}
+		}
+		return null;
+	}
+
 	public void borrowBook(Member member, Book book){
+		if (!borrowedBooks.contains(book)){
+			member.borrowBook(book);
+			borrowedBooks.add(book);
+			System.out.println(member.getName() + " has borrowed the book '" + book.getTitle() + "'");
+		}
+	}
+
+	public void borrowBook(String memberName, String bookTitle){
+		Book book = getBookByTitle(bookTitle);
+		Member member = getMemberByName(memberName);
 		if (!borrowedBooks.contains(book)){
 			member.borrowBook(book);
 			borrowedBooks.add(book);
