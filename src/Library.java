@@ -42,6 +42,12 @@ public class Library {
 		System.out.println(member.getName() + " has left the library");
 	}
 
+	public void removeMember(String memberName){
+		Member member = getMemberByName(memberName);
+		members.remove(member);
+		System.out.println(member.getName() + " has left the library");
+	}
+
 	public void addBook(Book book){
 		if (!catalog.contains(book)){
 			catalog.add(book);
@@ -56,6 +62,12 @@ public class Library {
 	}
 
 	public void removeBook(Book book){
+		catalog.remove(book);
+		System.out.println(book.getTitle() + " has been removed from the catalog.");
+	}
+
+	public void removeBook(String bookName){
+		Book book = getBookByTitle(bookName);
 		catalog.remove(book);
 		System.out.println(book.getTitle() + " has been removed from the catalog.");
 	}
