@@ -44,4 +44,12 @@ public class LibrarianController {
 	public void getAllMembers() { 
 		library.getAllMembers();
 	}
+	
+	public void getBookByTitle(String title) { 
+		library.getBookByTitle(title);
+	}
+	
+	public void getMemberByName(String name) { 
+		library.getMemberByName(name);
+	}
 }
