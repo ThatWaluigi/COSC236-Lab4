@@ -1,8 +1,4 @@
 //Simplified verion of Library Management System
-
-import java.util.ArrayList;
-import java.util.HashMap;
-
 public class LibraryApp {
   
 public static void main(String[] args) {
