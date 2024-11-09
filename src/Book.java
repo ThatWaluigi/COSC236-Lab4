@@ -33,12 +33,10 @@ public class Book {
 		public void borrow() {
 			if(isAvailable) {
 				isAvailable = false;
-				
 			}
 		}
 		public void returnBook() {
 			isAvailable = true;
-			
 		}
 		
 		public void  setDetails(String author, String title) {

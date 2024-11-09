@@ -82,7 +82,6 @@ public class Library {
 	public void borrowBook(Member member, Book book){
 		if (book.isAvailable()){
 			member.borrowBook(book);
-			book.setIsAvailable(false);
 			System.out.println(member.getName() + " has borrowed the book '" + book.getTitle() + "'");
 		}
 		else
@@ -96,7 +95,6 @@ public class Library {
 		Member member = getMemberByName(memberName);
 		if (book.isAvailable()){
 			member.borrowBook(book);
-			book.setIsAvailable(false);
 			System.out.println(member.getName() + " has borrowed the book '" + book.getTitle() + "'");
 		}
 		else
@@ -108,7 +106,6 @@ public class Library {
 	public void returnBook(Member member, Book book){
 		if (!book.isAvailable()){
 			member.returnBook(book);
-			book.setIsAvailable(true);
 			System.out.println(member.getName() + " has returned the book '" + book.getTitle() + "'");
 		}
 	}
@@ -118,7 +115,6 @@ public class Library {
 		Member member = getMemberByName(memberName);
 		if (!book.isAvailable()){
 			member.returnBook(book);
-			book.setIsAvailable(true);
 			System.out.println(member.getName() + " has returned the book '" + book.getTitle() + "'");
 		}
 	}
